@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!--
+  CSS BASICS
+  This page teaches how to style and arrange the HTML skeleton.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One-Night Web Basics | CSS</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body data-page="css">
+  <header class="site-header">
+    <div class="logo">One-Night Web Basics</div>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="html-basics.html">HTML</a></li>
+        <li><a href="css-basics.html" class="active">CSS</a></li>
+        <li><a href="js-basics.html">JS</a></li>
+        <li><a href="playground.html">Playground</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Step 2 • Style</p>
+        <h1>CSS paints the boxes.</h1>
+        <p class="lead">Selectors find elements. Properties change how they look and sit on the page.</p>
+      </div>
+      <div class="card">
+        <h2>Core ideas</h2>
+        <ul>
+          <li>Use classes most of the time.</li>
+          <li>IDs are unique. Avoid styling many IDs.</li>
+          <li>The box model: content → padding → border → margin.</li>
+        </ul>
+        <p class="hint">COMMON MISTAKE: Forgetting that padding and borders add to element size.</p>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <h2>Selectors</h2>
+        <ul>
+          <li><strong>Element:</strong> <code>p { color: blue; }</code></li>
+          <li><strong>Class:</strong> <code>.note { color: green; }</code></li>
+          <li><strong>ID:</strong> <code>#title { font-size: 2rem; }</code></li>
+        </ul>
+        <p class="hint">TRY THIS: Add the class <code>note</code> to a paragraph in the HTML file and reload.</p>
+      </article>
+      <article class="card">
+        <h2>Pseudo-classes</h2>
+        <p>These apply when something special happens.</p>
+        <ul>
+          <li><code>a:hover</code> when the mouse is over a link.</li>
+          <li><code>input:focus</code> when an input is active.</li>
+          <li><code>button:disabled</code> when a button cannot be used.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="card demo">
+      <div class="demo-content">
+        <h2>Box model visual</h2>
+        <p>Move the sliders to see how padding and border radius change the box.</p>
+        <div class="controls" id="box-controls">
+          <label>Padding <input type="range" min="0" max="40" value="12" data-var="pad"></label>
+          <label>Border radius <input type="range" min="0" max="40" value="10" data-var="radius"></label>
+          <label>Hue (color) <input type="range" min="0" max="360" value="200" data-var="hue"></label>
+        </div>
+      </div>
+      <div class="demo-preview">
+        <div class="box-preview" id="box-preview">
+          <p>Padding adds breathing room inside the border.</p>
+          <p>Border radius curves the corners.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card demo">
+      <div class="demo-content">
+        <h2>Flexbox mini playground</h2>
+        <p>Flexbox arranges items in a row or column.</p>
+        <div class="controls" id="flex-controls">
+          <label>Justify content
+            <select data-flex="justify">
+              <option value="flex-start">flex-start</option>
+              <option value="center">center</option>
+              <option value="space-between">space-between</option>
+              <option value="space-around">space-around</option>
+              <option value="flex-end">flex-end</option>
+            </select>
+          </label>
+          <label>Align items
+            <select data-flex="align">
+              <option value="flex-start">flex-start</option>
+              <option value="center" selected>center</option>
+              <option value="flex-end">flex-end</option>
+              <option value="stretch">stretch</option>
+            </select>
+          </label>
+        </div>
+      </div>
+      <div class="demo-preview">
+        <div class="flex-demo" id="flex-demo">
+          <div>Box 1</div>
+          <div>Box 2</div>
+          <div>Box 3</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="checklist">
+      <div class="section-header">
+        <h2>Checklist</h2>
+        <button class="button ghost" type="button" data-reset>Reset progress</button>
+      </div>
+      <ul class="todo">
+        <li><label><input type="checkbox" data-progress="selectors"> I can pick elements with selectors</label></li>
+        <li><label><input type="checkbox" data-progress="box"> I understand the box model</label></li>
+        <li><label><input type="checkbox" data-progress="flex"> I tweaked the flex playground</label></li>
+        <li><label><input type="checkbox" data-progress="pseudo"> I tried a hover/focus style</label></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Next up: JavaScript adds behavior.</p>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>
+<!--
+  RECAP:
+  - Classes are the main way to style groups of elements.
+  - Padding and borders change size; margin separates elements.
+  - Flexbox aligns items easily.
+  - Pseudo-classes react to user actions.
+-->

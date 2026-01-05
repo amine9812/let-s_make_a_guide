@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<!--
+  HTML BASICS
+  This page teaches the "structure" layer of the web.
+  CSS will make things pretty, JS will add behavior later.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One-Night Web Basics | HTML</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body data-page="html">
+  <header class="site-header">
+    <div class="logo">One-Night Web Basics</div>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="html-basics.html" class="active">HTML</a></li>
+        <li><a href="css-basics.html">CSS</a></li>
+        <li><a href="js-basics.html">JS</a></li>
+        <li><a href="playground.html">Playground</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Step 1 • Structure</p>
+        <h1>HTML builds the skeleton of a page.</h1>
+        <p class="lead">HTML is just boxes and labels. CSS paints them. JS moves them.</p>
+      </div>
+      <div class="card">
+        <!-- TRY THIS: Add another list item below and see the structure still works. -->
+        <h2>Mini recap</h2>
+        <ul>
+          <li><strong>Doctype</strong> tells the browser this is HTML5.</li>
+          <li><strong>Head</strong> holds meta info (like the title).</li>
+          <li><strong>Body</strong> holds what people see.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <h2>Document structure</h2>
+        <!-- Simple comments explain each tag. -->
+        <p>Key tags you should know:</p>
+        <ul>
+          <li><code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>: headings, like chapter titles.</li>
+          <li><code>&lt;p&gt;</code>: paragraphs for regular text.</li>
+          <li><code>&lt;a&gt;</code>: links. Needs an <code>href</code> to go somewhere.</li>
+          <li><code>&lt;img&gt;</code>: images. Needs <code>src</code> and <code>alt</code>.</li>
+          <li><code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code> with <code>&lt;li&gt;</code>: lists.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h2>Semantic tags</h2>
+        <p>These tags describe meaning, not style. They help screen readers and search engines.</p>
+        <p><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>.</p>
+        <!-- COMMON MISTAKE: Using <div> for everything. Use semantic tags when they fit. -->
+        <p class="hint">TRY THIS: Look at the top of this page. The nav lives inside a <code>&lt;header&gt;</code>.</p>
+      </article>
+    </section>
+
+    <section class="card demo">
+      <div class="demo-content">
+        <h2>Form basics</h2>
+        <p>Forms collect user input. Labels connect text to inputs.</p>
+        <form class="demo-form">
+          <label for="demo-name">Name</label>
+          <input id="demo-name" type="text" name="name" required placeholder="Your name">
+
+          <label for="demo-email">Email</label>
+          <input id="demo-email" type="email" name="email" required placeholder="you@example.com">
+
+          <button type="submit">Submit</button>
+        </form>
+        <!-- TRY THIS: Add required to the email input and see the browser validation. -->
+      </div>
+      <div class="demo-note">
+        <p><strong>Why use labels?</strong> They make forms accessible and enlarge the clickable area.</p>
+        <p><strong>Why required?</strong> Browser can stop empty submissions for free.</p>
+      </div>
+    </section>
+
+    <section class="card demo">
+      <div class="demo-content">
+        <h2>Live HTML editor</h2>
+        <p>Change the text fields below. The preview updates instantly.</p>
+        <div class="mini-form" id="html-editor">
+          <label>Card title
+            <input type="text" data-field="title" value="Hello, HTML!">
+          </label>
+          <label>Card text
+            <input type="text" data-field="text" value="This text comes from an input.">
+          </label>
+          <label>Button label
+            <input type="text" data-field="button" value="Click me">
+          </label>
+        </div>
+      </div>
+      <div class="demo-preview" aria-live="polite">
+        <!-- This preview card mirrors the input values above. -->
+        <article class="preview-card" id="html-preview">
+          <header>
+            <h3>Hello, HTML!</h3>
+          </header>
+          <p>This text comes from an input.</p>
+          <button type="button">Click me</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <h2>Semantic vs non-semantic</h2>
+        <!-- Semantic example -->
+        <div class="semantic-example">
+          <header><h3>Semantic layout</h3></header>
+          <main>
+            <section>
+              <h4>Section title</h4>
+              <p>This section uses tags that describe meaning.</p>
+            </section>
+          </main>
+          <footer><small>Footer text</small></footer>
+        </div>
+      </article>
+      <article class="card">
+        <h2>Same, but with generic divs</h2>
+        <!-- Non-semantic example -->
+        <div class="semantic-example">
+          <div><strong>Header</strong></div>
+          <div>
+            <div>
+              <strong>Section title</strong>
+              <p>Harder to read. Screen readers get less info.</p>
+            </div>
+          </div>
+          <div><small>Footer text</small></div>
+        </div>
+        <!-- COMMON MISTAKE: Using generic <div> tags when a semantic tag exists. -->
+      </article>
+    </section>
+
+    <section class="checklist">
+      <div class="section-header">
+        <h2>Checklist</h2>
+        <button class="button ghost" type="button" data-reset>Reset progress</button>
+      </div>
+      <ul class="todo">
+        <li><label><input type="checkbox" data-progress="structure"> I can name the basic tags</label></li>
+        <li><label><input type="checkbox" data-progress="semantic"> I know why semantic tags help</label></li>
+        <li><label><input type="checkbox" data-progress="form"> I built a simple form</label></li>
+        <li><label><input type="checkbox" data-progress="live-edit"> I edited the live card</label></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Next up: CSS adds color and layout.</p>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>
+<!--
+  RECAP:
+  - HTML is for structure.
+  - Use semantic tags when possible.
+  - Forms connect labels to inputs.
+  - Small edits can be previewed live.
+-->

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+  Welcome to One-Night Web Basics!
+  This page explains how to use the mini course.
+  The whole project is plain HTML/CSS/JS, so you can read and edit everything.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One-Night Web Basics | Home</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="logo">One-Night Web Basics</div>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="pages/html-basics.html">HTML</a></li>
+        <li><a href="pages/css-basics.html">CSS</a></li>
+        <li><a href="pages/js-basics.html">JS</a></li>
+        <li><a href="pages/playground.html">Playground</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Build by doing • No setup • Learn tonight</p>
+        <h1>Learn HTML, CSS, and JavaScript in one night.</h1>
+        <p class="lead">Open this folder, read the comments, tweak the code, and see changes instantly. The lessons are tiny and friendly but still correct.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="pages/html-basics.html">Start here (HTML)</a>
+          <a class="button ghost" href="#path">See the night plan</a>
+        </div>
+      </div>
+      <div class="card">
+        <h2>How this works</h2>
+        <ol>
+          <li>Open <code>index.html</code> in your browser.</li>
+          <li>Follow the pages in the top nav.</li>
+          <li>Edit code snippets and sliders to see instant results.</li>
+          <li>Track your progress with the checkboxes.</li>
+        </ol>
+        <p class="hint">TIP: Keep the browser and a text editor open side by side.</p>
+      </div>
+    </section>
+
+    <section id="path" class="grid two">
+      <article class="card">
+        <h3>1. HTML basics</h3>
+        <p>Learn the skeleton of a page: headings, paragraphs, links, lists, images, and semantic layout tags.</p>
+        <p class="hint">TRY THIS: Change a heading and watch the preview update.</p>
+      </article>
+      <article class="card">
+        <h3>2. CSS basics</h3>
+        <p>Style the page with colors, spacing, borders, Flexbox, and hover/focus states.</p>
+        <p class="hint">TRY THIS: Move the range sliders to change padding and roundness.</p>
+      </article>
+      <article class="card">
+        <h3>3. JavaScript basics</h3>
+        <p>Add behavior: variables, functions, events, and DOM updates. Save small bits of state with <code>localStorage</code>.</p>
+        <p class="hint">TRY THIS: Click the counter buttons and read the code comments.</p>
+      </article>
+      <article class="card">
+        <h3>4. Playground</h3>
+        <p>Mix everything together. Build a profile card with friendly controls for HTML, CSS, and JS tweaks.</p>
+        <p class="hint">TRY THIS: Toggle dark mode and see how classes change the style.</p>
+      </article>
+    </section>
+
+    <section class="checklist">
+      <div class="section-header">
+        <h2>Your progress tonight</h2>
+        <button class="button ghost" type="button" data-reset>Reset progress</button>
+      </div>
+      <ul class="todo">
+        <li><label><input type="checkbox" data-progress="home-read"> Read how the course works</label></li>
+        <li><label><input type="checkbox" data-progress="html-done"> Finish HTML basics page</label></li>
+        <li><label><input type="checkbox" data-progress="css-done"> Finish CSS basics page</label></li>
+        <li><label><input type="checkbox" data-progress="js-done"> Finish JavaScript basics page</label></li>
+        <li><label><input type="checkbox" data-progress="playground-done"> Build the playground card</label></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made for fast learning. Everything is in this folder.</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+  PLAYGROUND
+  This is the capstone: mix HTML, CSS, and JS using simple controls.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One-Night Web Basics | Playground</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/playground.css">
+</head>
+<body data-page="playground">
+  <header class="site-header">
+    <div class="logo">One-Night Web Basics</div>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="html-basics.html">HTML</a></li>
+        <li><a href="css-basics.html">CSS</a></li>
+        <li><a href="js-basics.html">JS</a></li>
+        <li><a href="playground.html" class="active">Playground</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Step 4 • Build</p>
+        <h1>Mix HTML + CSS + JS to make a profile card.</h1>
+        <p class="lead">Use the controls to change the card. Watch how HTML content, CSS variables, and JS behaviors all connect.</p>
+      </div>
+      <div class="card">
+        <h2>Challenges</h2>
+        <ol>
+          <li>Fill in the profile text (HTML).</li>
+          <li>Pick colors and spacing (CSS).</li>
+          <li>Add interactivity: like button + dark mode (JS).</li>
+        </ol>
+        <p class="hint">TRY THIS: Toggle dark mode and see the class change on the preview.</p>
+      </div>
+    </section>
+
+    <section class="playground-grid">
+      <aside class="card playground-panel">
+        <div class="panel-section">
+          <h2>HTML (content)</h2>
+          <label> Name
+            <input type="text" data-profile="name" value="Alex Kim">
+          </label>
+          <label> Short bio
+            <input type="text" data-profile="bio" value="Curious student who loves friendly code.">
+          </label>
+          <label> Favorite links (comma separated)
+            <input type="text" data-profile="links" value="Docs,Music,Snacks">
+          </label>
+        </div>
+
+        <div class="panel-section">
+          <h2>CSS (style)</h2>
+          <label> Theme color
+            <input type="color" data-profile="color" value="#4b8df8">
+          </label>
+          <label> Padding
+            <input type="range" min="8" max="40" value="16" data-profile="pad">
+          </label>
+          <label> Corner roundness
+            <input type="range" min="0" max="40" value="14" data-profile="radius">
+          </label>
+        </div>
+
+        <div class="panel-section">
+          <h2>JS (behavior)</h2>
+          <label class="inline">
+            <input type="checkbox" data-profile="dark"> Toggle dark mode
+          </label>
+          <button type="button" class="button ghost" data-profile="like">Like +1</button>
+          <p class="hint">The like count is stored in JS and written into the DOM.</p>
+        </div>
+      </aside>
+
+      <section class="card playground-preview">
+        <div class="preview-header">
+          <h2>Preview</h2>
+          <button class="button ghost" type="button" data-reset>Reset progress</button>
+        </div>
+        <article class="profile-card" id="profile-card">
+          <div class="profile-top">
+            <div class="avatar" aria-hidden="true">A</div>
+            <div>
+              <h3 data-slot="name">Alex Kim</h3>
+              <p data-slot="bio">Curious student who loves friendly code.</p>
+            </div>
+          </div>
+          <ul class="profile-links" data-slot="links">
+            <li><a href="#" role="button">Docs</a></li>
+            <li><a href="#" role="button">Music</a></li>
+            <li><a href="#" role="button">Snacks</a></li>
+          </ul>
+          <div class="profile-actions">
+            <button type="button" class="button primary" data-profile="like-display">❤️ Like <span data-slot="likes">0</span></button>
+            <button type="button" class="button ghost" data-profile="dark-display">Toggle dark</button>
+          </div>
+        </article>
+      </section>
+    </section>
+
+    <section class="checklist">
+      <div class="section-header">
+        <h2>Checklist</h2>
+        <button class="button ghost" type="button" data-reset>Reset progress</button>
+      </div>
+      <ul class="todo">
+        <li><label><input type="checkbox" data-progress="content"> I changed the profile text</label></li>
+        <li><label><input type="checkbox" data-progress="style"> I tweaked the colors and spacing</label></li>
+        <li><label><input type="checkbox" data-progress="behavior"> I toggled dark mode and liked</label></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>You just mixed HTML + CSS + JS. Great job!</p>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+  <script src="../assets/playground.js"></script>
+</body>
+</html>
+<!--
+  RECAP:
+  - HTML content changes what appears in the card.
+  - CSS variables control color, padding, and radius.
+  - JS toggles classes and counts likes.
+-->

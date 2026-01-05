@@ -1,0 +1,75 @@
+/* 
+  Styles specific to the playground page.
+  These show how a few CSS variables can theme a component.
+*/
+
+.profile-card {
+  --profile-color: #4b8df8;
+  --profile-pad: 16px;
+  --profile-radius: 14px;
+  background: #0b1220;
+  border: 1px solid var(--border);
+  border-radius: var(--profile-radius);
+  padding: var(--profile-pad);
+  display: grid;
+  gap: 0.75rem;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.profile-card.dark {
+  background: #0a0f1b;
+  border-color: rgba(96, 165, 250, 0.4);
+  color: #e5edff;
+}
+
+.profile-top {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(96, 165, 250, 0.25);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #e2e8f0;
+}
+
+.profile-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.profile-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(96, 165, 250, 0.15);
+  border: 1px solid var(--border);
+  color: #e2e8f0;
+}
+
+.profile-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.profile-card.dark .profile-links a {
+  background: rgba(96, 165, 250, 0.25);
+}
+
+.panel-section input[type="color"] {
+  padding: 0;
+  height: 40px;
+}

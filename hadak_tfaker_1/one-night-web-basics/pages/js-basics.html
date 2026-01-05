@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--
+  JAVASCRIPT BASICS
+  This page teaches behavior: variables, logic, DOM, and events.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One-Night Web Basics | JavaScript</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body data-page="js">
+  <header class="site-header">
+    <div class="logo">One-Night Web Basics</div>
+    <nav aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="html-basics.html">HTML</a></li>
+        <li><a href="css-basics.html">CSS</a></li>
+        <li><a href="js-basics.html" class="active">JS</a></li>
+        <li><a href="playground.html">Playground</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Step 3 • Behavior</p>
+        <h1>JavaScript makes things react.</h1>
+        <p class="lead">We use JS to read values, make decisions, and update the DOM.</p>
+      </div>
+      <div class="card">
+        <h2>Quick reference</h2>
+        <ul>
+          <li><code>let</code> or <code>const</code> to store data.</li>
+          <li><code>querySelector</code> grabs elements.</li>
+          <li><code>addEventListener</code> reacts to clicks and typing.</li>
+        </ul>
+        <p class="hint">COMMON MISTAKE: Forgetting <code>document.querySelector</code> returns <strong>one</strong> element. Use <code>querySelectorAll</code> for many.</p>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <article class="card">
+        <h2>Variables, arrays, and objects</h2>
+        <p><code>const name = "Ada";</code></p>
+        <p><code>let score = 0;</code> (use <code>let</code> when it will change)</p>
+        <p><code>const colors = ["red", "blue"];</code></p>
+        <p><code>const person = { name: "Lee", age: 20 };</code></p>
+      </article>
+      <article class="card">
+        <h2>Loops and conditions</h2>
+        <p><code>for (const color of colors) { ... }</code> runs through each color.</p>
+        <p><code>if (score &gt; 10) { ... } else { ... }</code> makes choices.</p>
+        <p class="hint">TRY THIS: In the todo list code below, see how we loop over tasks to render them.</p>
+      </article>
+    </section>
+
+    <section class="card demo">
+      <div class="demo-content">
+        <h2>Counter (events + DOM)</h2>
+        <p>Click the buttons. JS listens for clicks and updates text content.</p>
+        <div class="counter" id="js-counter">
+          <button type="button" data-change="-1" aria-label="Decrease">-</button>
+          <output aria-live="polite">0</output>
+          <button type="button" data-change="1" aria-label="Increase">+</button>
+        </div>
+      </div>
+      <div class="demo-note">
+        <p>We store the number in a variable, change it, then write it into the DOM.</p>
+      </div>
+    </section>
+
+    <section class="card demo">
+      <div class="demo-content">
+        <h2>Live character counter</h2>
+        <p>Type in the box. JS reads the length of the string.</p>
+        <label class="block" for="char-input">Your text</label>
+        <input id="char-input" type="text" placeholder="Start typing">
+        <p><strong>Characters:</strong> <span id="char-count">0</span></p>
+      </div>
+      <div class="demo-note">
+        <p>We read <code>input.value.length</code> on every <code>input</code> event.</p>
+      </div>
+    </section>
+
+    <section class="card demo">
+      <div class="demo-content">
+        <h2>Mini todo list</h2>
+        <p>Tasks are saved to <code>localStorage</code> (if available).</p>
+        <form id="todo-form" class="mini-form">
+          <label>New task
+            <input type="text" name="task" required placeholder="Walk the dog">
+          </label>
+          <button type="submit">Add task</button>
+        </form>
+      </div>
+      <div class="demo-preview">
+        <ul class="todo-list" id="todo-list" aria-live="polite"></ul>
+      </div>
+    </section>
+
+    <section class="checklist">
+      <div class="section-header">
+        <h2>Checklist</h2>
+        <button class="button ghost" type="button" data-reset>Reset progress</button>
+      </div>
+      <ul class="todo">
+        <li><label><input type="checkbox" data-progress="vars"> I can make variables with let/const</label></li>
+        <li><label><input type="checkbox" data-progress="events"> I understand event listeners</label></li>
+        <li><label><input type="checkbox" data-progress="dom"> I changed the DOM text content</label></li>
+        <li><label><input type="checkbox" data-progress="storage"> I added a task to localStorage</label></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Next up: Build your own card in the playground.</p>
+  </footer>
+
+  <script src="../assets/app.js"></script>
+</body>
+</html>
+<!--
+  RECAP:
+  - JS stores data in variables.
+  - Event listeners react to user actions.
+  - querySelector grabs DOM nodes; textContent updates them.
+  - localStorage can remember small bits between reloads.
+-->
